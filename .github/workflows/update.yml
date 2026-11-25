@@ -1,0 +1,36 @@
+name: Update formula
+
+# Keeps the formula at the latest hardenkit/scan release. Runs a few times a
+# day and can be started by hand right after a release.
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: ./update.sh
+      - name: Commit when it changed
+        run: |
+          git diff --quiet && exit 0
+          version=$(sed -n 's/^  version "\(.*\)"/\1/p' Formula/hardenkit.rb)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -qam "chore: hardenkit $version"
+          git push
+
+  test:
+    needs: update
+    runs-on: macos-latest
+    steps:
+      - name: Install from the tap and run it
+        run: |
+          brew install hardenkit/tap/hardenkit
+          hardenkit version
