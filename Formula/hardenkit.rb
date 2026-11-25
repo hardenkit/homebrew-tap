@@ -2,28 +2,28 @@
 class Hardenkit < Formula
   desc "Vulnerability scanner that ranks findings by real attacks"
   homepage "https://hardenkit.com"
-  version "0.1.0"
+  version "0.1.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/hardenkit/scan/releases/download/v0.1.0/hardenkit_0.1.0_darwin_arm64.tar.gz"
-      sha256 "95b97c41ed1150fd8f58f65eb98ea27ca43c7fc75b70078b85813b0ea2542f9d"
+      url "https://github.com/hardenkit/scan/releases/download/v0.1.1/hardenkit_0.1.1_darwin_arm64.tar.gz"
+      sha256 "1e2256ad044a798e97cba66f78ba7e9a9df2fd6536415780e03475fec8a612e2"
     end
     on_intel do
-      url "https://github.com/hardenkit/scan/releases/download/v0.1.0/hardenkit_0.1.0_darwin_amd64.tar.gz"
-      sha256 "7ac35f67731ef4a44c40d67d0113501bbe1b72c3233bfe0d9844fe939ae52442"
+      url "https://github.com/hardenkit/scan/releases/download/v0.1.1/hardenkit_0.1.1_darwin_amd64.tar.gz"
+      sha256 "b952146960d235db490fd7a7e6cee641d88f1c7c7516d20850c58501e10e4baa"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/hardenkit/scan/releases/download/v0.1.0/hardenkit_0.1.0_linux_arm64.tar.gz"
-      sha256 "2ceef6892996ce26e68eea2c5e60321d7404c20f1eabf909542d4495fbc0af05"
+      url "https://github.com/hardenkit/scan/releases/download/v0.1.1/hardenkit_0.1.1_linux_arm64.tar.gz"
+      sha256 "d943092576cff31b6df13c35eb54dd00695a9d2b93f0da1e939899a27fa1773a"
     end
     on_intel do
-      url "https://github.com/hardenkit/scan/releases/download/v0.1.0/hardenkit_0.1.0_linux_amd64.tar.gz"
-      sha256 "b0cb2d41a123e84c922f31ccbc4232aa5a8c1e3c91d6556aa608662b253eba12"
+      url "https://github.com/hardenkit/scan/releases/download/v0.1.1/hardenkit_0.1.1_linux_amd64.tar.gz"
+      sha256 "a148badd73f74bb67465f889748e13f48b6c46ffb82b0e7bd31b4e399fae33d9"
     end
   end
 
